@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import {
   ScrollView,
   FlatList,
@@ -7,6 +6,7 @@ import {
   StyleSheet,
   Dimensions,
   Text,
+  TouchableOpacity,
 } from "react-native";
 
 interface ImageData {
@@ -111,7 +111,9 @@ export default function TabOneScreen() {
 
   const renderItem = ({ item }: { item: ImageData }) => (
     <View style={styles.imageContainer}>
-      <Image source={{ uri: item.uri }} style={styles.image} />
+      <TouchableOpacity activeOpacity={0.6}>
+        <Image source={{ uri: item.uri }} style={styles.image} />
+      </TouchableOpacity>
       <View style={styles.progressBar}>
         <View
           style={[styles.progressGreen, { width: `${item.progress * 100}%` }]}
@@ -134,7 +136,7 @@ export default function TabOneScreen() {
       <FlatList
         data={imageArray}
         renderItem={renderItem}
-        keyExtractor={(item) => item.id.toString()}
+        keyExtractor={(item: any) => item.id.toString()}
         numColumns={numColumns}
         contentContainerStyle={styles.container}
       />
@@ -144,7 +146,7 @@ export default function TabOneScreen() {
       <FlatList
         data={imageArrayNotStarted}
         renderItem={renderItem}
-        keyExtractor={(item) => item.id.toString()}
+        keyExtractor={(item: any) => item.id.toString()}
         numColumns={numColumns}
         contentContainerStyle={styles.container}
       />

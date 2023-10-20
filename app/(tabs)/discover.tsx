@@ -7,9 +7,11 @@ import {
   FlatList,
   Image,
   ScrollView,
+  TouchableOpacity,
 } from "react-native";
-import { Feather } from "@expo/vector-icons";
+import Feather from "@expo/vector-icons/Feather";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { useNavigation } from "@react-navigation/native";
 
 const data = [
   {
@@ -152,6 +154,11 @@ const friendsReviews = [
 ];
 
 export default function Discover() {
+  const navigation = useNavigation();
+  const handleGrammyPress = () => {
+    navigation.navigate("Grammy");
+  };
+
   const renderStars = (review: number) => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
@@ -192,29 +199,35 @@ export default function Discover() {
         <FlatList
           data={data}
           horizontal
-          keyExtractor={(item) => item.id}
+          keyExtractor={(item: any) => item.id}
           renderItem={({ item }) => (
-            <Image source={{ uri: item.image }} style={styles.image} />
+            <TouchableOpacity activeOpacity={0.6} onPress={handleGrammyPress}>
+              <Image source={{ uri: item.image }} style={styles.image} />
+            </TouchableOpacity>
           )}
         />
         <Text style={styles.albumText}>Músicas em alta</Text>
         <FlatList
           data={dataSongs}
           horizontal
-          keyExtractor={(item) => item.id}
+          keyExtractor={(item: any) => item.id}
           renderItem={({ item }) => (
-            <Image source={{ uri: item.image }} style={styles.image} />
+            <TouchableOpacity activeOpacity={0.6}>
+              <Image source={{ uri: item.image }} style={styles.image} />
+            </TouchableOpacity>
           )}
         />
-        <View style={styles.gramophoneContainer}>
-          <Image
-            source={require("../../assets/images/gramophone.png")}
-            style={styles.gramophoneImage}
-          />
-          <Text style={styles.gramophoneText}>
-            Avalie as músicas indicadas ao Grammy Awards 2024
-          </Text>
-        </View>
+        <TouchableOpacity activeOpacity={0.6}>
+          <View style={styles.gramophoneContainer}>
+            <Image
+              source={require("../../assets/images/gramophone.png")}
+              style={styles.gramophoneImage}
+            />
+            <Text style={styles.gramophoneText}>
+              Avalie as músicas indicadas ao Grammy Awards 2024
+            </Text>
+          </View>
+        </TouchableOpacity>
         <Image
           source={require("../../assets/images/new.png")}
           style={styles.topLeftImage}
@@ -225,10 +238,12 @@ export default function Discover() {
         <FlatList
           data={friendsReviews}
           horizontal
-          keyExtractor={(item) => item.id}
+          keyExtractor={(item: any) => item.id}
           renderItem={({ item }) => (
             <View>
-              <Image source={{ uri: item.image }} style={styles.image} />
+              <TouchableOpacity activeOpacity={0.6}>
+                <Image source={{ uri: item.image }} style={styles.image} />
+              </TouchableOpacity>
               <View style={styles.divReview}>
                 <Image source={item.friendPicture} style={styles.friendImage} />
                 {renderStars(item.review)}
