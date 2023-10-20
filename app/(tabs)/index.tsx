@@ -8,6 +8,7 @@ import {
   Text,
   TouchableOpacity,
 } from "react-native";
+import ListImages from "../../components/ListImages";
 
 interface ImageData {
   id: number;
