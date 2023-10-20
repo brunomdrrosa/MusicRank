@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {
+  ScrollView,
   FlatList,
   View,
   Image,
@@ -60,18 +61,48 @@ const imageArray: ImageData[] = [
 const imageArrayNotStarted: ImageData[] = [
   {
     id: 1,
-    uri: "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/05/05/f3/0505f338-9873-feb4-af7f-27a470405e5f/196589246974.jpg/1200x1200bf-60.jpg",
-    progress: 0.9,
+    uri: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/02/1d/30/021d3036-5503-3ed3-df00-882f2833a6ae/17UM1IM17026.rgb.jpg/1200x1200bb.jpg",
+    progress: 0,
   },
   {
     id: 2,
-    uri: "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/2a/19/fb/2a19fb85-2f70-9e44-f2a9-82abe679b88e/886449990061.jpg/1200x1200bb.jpg",
-    progress: 0.8,
+    uri: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/e9/31/cc/e931cc5a-e541-5348-b601-1a3053474acb/886447488812.jpg/600x600bf-60.jpg",
+    progress: 0,
   },
   {
     id: 3,
+    uri: "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/18/08/a1/1808a1be-b5a9-5e69-583d-b8a357efd760/19UM1IM12338.rgb.jpg/600x600bf-60.jpg",
+    progress: 0,
+  },
+  {
+    id: 4,
+    uri: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/cd/b0/ec/cdb0ec3b-be51-0184-a52e-4fc70c3fb5b8/4050538292671.jpg/1200x1200bb.jpg",
+    progress: 0,
+  },
+  {
+    id: 5,
+    uri: "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/c3/64/46/c364465f-6271-8aae-93a8-b9979d2befe5/20UMGIM82075.rgb.jpg/1200x1200bb.jpg",
+    progress: 0,
+  },
+  {
+    id: 6,
     uri: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/73/6d/7c/736d7cfb-c79d-c9a9-4170-5e71d008dea1/886449666430.jpg/1200x1200bb.jpg",
-    progress: 0.5,
+    progress: 0,
+  },
+  {
+    id: 7,
+    uri: "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/49/3d/ab/493dab54-f920-9043-6181-80993b8116c9/19UMGIM53909.rgb.jpg/1200x1200bb.jpg",
+    progress: 0,
+  },
+  {
+    id: 8,
+    uri: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/15/e6/e8/15e6e8a4-4190-6a8b-86c3-ab4a51b88288/190295851286.jpg/1200x1200bb.jpg",
+    progress: 0,
+  },
+  {
+    id: 9,
+    uri: "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/6f/bc/e6/6fbce6c4-c38c-72d8-4fd0-66cfff32f679/20UMGIM12176.rgb.jpg/1200x1200bf-60.jpg",
+    progress: 0,
   },
 ];
 
@@ -96,7 +127,7 @@ export default function TabOneScreen() {
   );
 
   return (
-    <>
+    <ScrollView>
       <View style={styles.listeningView}>
         <Text style={styles.listeningText}>OUVINDO</Text>
       </View>
@@ -110,7 +141,14 @@ export default function TabOneScreen() {
       <View style={styles.listeningViewTwo}>
         <Text style={styles.listeningText}>NÃO INICIADOS</Text>
       </View>
-    </>
+      <FlatList
+        data={imageArrayNotStarted}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id.toString()}
+        numColumns={numColumns}
+        contentContainerStyle={styles.container}
+      />
+    </ScrollView>
   );
 }
 
@@ -119,7 +157,6 @@ const imageWidth = windowWidth / 3 - 20;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     margin: 8,
   },
   imageContainer: {
@@ -161,11 +198,11 @@ const styles = StyleSheet.create({
     width: 100,
   },
   listeningViewTwo: {
-    marginBottom: 200,
-    left: "34%",
+    left: "33%",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    marginTop: 20,
     backgroundColor: "#373737",
     borderRadius: 10,
     padding: 5,
