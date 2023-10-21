@@ -21,7 +21,7 @@ const ListWithProgress = ({ data }: ListImagesProps) => {
   }) => (
     <View style={styles.imageContainer}>
       <TouchableOpacity activeOpacity={0.6}>
-        <Image source={{ uri: item.image }} style={styles.image} />
+        <Image source={item.image} style={styles.image} />
       </TouchableOpacity>
       <View style={styles.progressBar}>
         <View

@@ -12,7 +12,7 @@ const ListImages = ({ data }: ListImagesProps) => {
       keyExtractor={(item: { id: string }) => item.id.toString()}
       renderItem={({ item }) => (
         <TouchableOpacity activeOpacity={0.6}>
-          <Image source={{ uri: item.image }} style={styles.image} />
+          <Image source={ item.image } style={styles.image} />
         </TouchableOpacity>
       )}
     />

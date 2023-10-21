@@ -1,29 +1,32 @@
-import { StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet } from "react-native";
 
-import { Text, View } from '../../components/Themed';
+import { View } from "../../components/Themed";
+import ListImages from "../../components/ListImages";
+import MusicRankText from "../../components/MusicRankText";
+import { showsCity } from "../../assets/jsons/shows";
+import { favoriteAlbums, favoriteSongs, lastAlbumsReviews, lastSongsReviews } from "../../assets/jsons/profile";
 
 export default function Profile() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab Four</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-    </View>
+    <ScrollView>
+      <View style={styles.container}>
+        <MusicRankText text="Últimas músicas avaliadas" />
+        <ListImages data={lastSongsReviews} />
+        <MusicRankText text="Músicas favoritas" />
+        <ListImages data={favoriteSongs} />
+        <MusicRankText text="Últimos álbuns avaliados" />
+        <ListImages data={lastAlbumsReviews} />
+        <MusicRankText text="Álbuns favoritos" />
+        <ListImages data={favoriteAlbums} />
+      </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
+    marginTop: 20,
+    marginBottom: 20,
+    marginLeft: 20,
   },
 });

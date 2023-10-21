@@ -46,7 +46,7 @@ const FriendsReviews = ({ data }: FriendsReviews) => {
       renderItem={({ item }) => (
         <View>
           <TouchableOpacity activeOpacity={0.6}>
-            <Image source={{ uri: item.image }} style={styles.image} />
+            <Image source={item.image} style={styles.image} />
           </TouchableOpacity>
           <View style={styles.divReview}>
             <Image source={item.friendPicture} style={styles.friendImage} />

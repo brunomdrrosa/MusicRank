@@ -6,7 +6,7 @@ const GrammyButton = () => {
       <TouchableOpacity activeOpacity={0.6}>
         <View style={styles.gramophoneContainer}>
           <Image
-            source={require("../assets/images/gramophone.png")}
+            source={require("../assets/images/discover/gramophone.png")}
             style={styles.gramophoneImage}
           />
           <Text style={styles.gramophoneText}>
@@ -15,7 +15,7 @@ const GrammyButton = () => {
         </View>
       </TouchableOpacity>
       <Image
-        source={require("../assets/images/new.png")}
+        source={require("../assets/images/discover/new.png")}
         style={styles.topLeftImage}
       />
     </>
