@@ -1,9 +1,13 @@
-import { Image, TouchableOpacity, StyleSheet, View, Text } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 const GrammyButton = () => {
   return (
     <>
       <TouchableOpacity activeOpacity={0.6}>
+        <Image
+          source={require("../assets/images/discover/new.png")}
+          style={styles.topLeftImage}
+        />
         <View style={styles.gramophoneContainer}>
           <Image
             source={require("../assets/images/discover/gramophone.png")}
@@ -14,10 +18,6 @@ const GrammyButton = () => {
           </Text>
         </View>
       </TouchableOpacity>
-      <Image
-        source={require("../assets/images/discover/new.png")}
-        style={styles.topLeftImage}
-      />
     </>
   );
 };
@@ -28,30 +28,32 @@ const styles = StyleSheet.create({
   gramophoneContainer: {
     flexDirection: "row",
     alignItems: "center",
+    justifyContent: "space-between",
     marginTop: 30,
     backgroundColor: "#373737",
     marginRight: 20,
-    height: 100,
     borderRadius: 10,
+    position: "relative",
+    padding: 16,
+    gap: 16,
   },
   gramophoneImage: {
-    width: 70,
-    height: 70,
-    marginLeft: 10,
-    marginRight: 15,
+    width: 64,
+    height: 64,
   },
   gramophoneText: {
     color: "white",
-    fontSize: 18,
+    fontSize: 16,
+    flex: 1,
     fontWeight: "bold",
-    maxWidth: "80%",
     textAlign: "center",
   },
   topLeftImage: {
     position: "absolute",
-    top: 505,
-    right: 355,
     width: 50,
+    left: -20,
+    top: 10,
+    zIndex: 999,
     height: 50,
   },
 });
