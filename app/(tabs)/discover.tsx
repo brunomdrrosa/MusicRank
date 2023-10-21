@@ -1,12 +1,13 @@
 import React from "react";
-import { View, StyleSheet, ScrollView } from "react-native";
-
-import SearchInput from "../../components/SearchInput";
-import ListImages from "../../components/ListImages";
-import GrammyButton from "../../components/GrammyButton";
+import { ScrollView, StyleSheet, View } from "react-native";
 import FriendsReviews from "../../components/FriendsReviews";
+import GrammyButton from "../../components/GrammyButton";
+import ListImages from "../../components/ListImages";
 import MusicRankText from "../../components/MusicRankText";
-import { albuns, friendsReviews, musicas } from "../../assets/jsons/discover";
+import SearchInput from "../../components/SearchInput";
+import { albuns } from "../../data/discover/albuns";
+import { friendsReviews } from "../../data/discover/friends-reviews";
+import { musicas } from "../../data/discover/musicas";
 
 export default function Discover() {
   return (

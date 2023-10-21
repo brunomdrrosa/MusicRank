@@ -6,16 +6,14 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-import { View } from "../../components/Themed";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import ListImages from "../../components/ListImages";
 import MusicRankText from "../../components/MusicRankText";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import {
-  favoriteAlbums,
-  favoriteSongs,
-  lastAlbumsReviews,
-  lastSongsReviews,
-} from "../../assets/jsons/profile";
+import { View } from "../../components/Themed";
+import { favoriteAlbums } from "../../data/profile/favorite-albums";
+import { favoriteSongs } from "../../data/profile/favorite-songs";
+import { lastAlbumsReviews } from "../../data/profile/last-albums-reviews";
+import { lastSongsReviews } from "../../data/profile/last-song-reviews";
 
 export default function Profile() {
   return (

@@ -1,6 +1,7 @@
 import { ScrollView, View, StyleSheet, Text } from "react-native";
 import ListWithProgress from "../../components/ListWithProgress";
-import { albumsNotStarted, albumsStarted } from "../../assets/jsons/home";
+import { albumsStarted } from "../../data/home/albums-started";
+import { albumsNotStarted } from "../../data/home/albums-not-started";
 
 export default function TabOneScreen() {
   return (

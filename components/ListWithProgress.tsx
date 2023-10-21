@@ -1,14 +1,14 @@
 import {
+  Dimensions,
   FlatList,
   Image,
-  TouchableOpacity,
   StyleSheet,
+  TouchableOpacity,
   View,
-  Dimensions,
 } from "react-native";
 
 interface ListImagesProps {
-  data: { id: number; image: string; progress: number }[];
+  data: { id: string; image: string; progress: number }[];
 }
 
 const ListWithProgress = ({ data }: ListImagesProps) => {

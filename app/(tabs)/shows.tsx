@@ -1,13 +1,11 @@
-import { View, StyleSheet, ScrollView } from "react-native";
+import { ScrollView, StyleSheet, View } from "react-native";
 import FriendsReviews from "../../components/FriendsReviews";
-import {
-  friendsReviews,
-  showsCity,
-  showsCountry,
-} from "../../assets/jsons/shows";
+import ListImages from "../../components/ListImages";
 import MusicRankText from "../../components/MusicRankText";
 import SearchInput from "../../components/SearchInput";
-import ListImages from "../../components/ListImages";
+import { friendsReviews } from "../../data/shows/friends-reviews";
+import { showsCity } from "../../data/shows/shows-city";
+import { showsCountry } from "../../data/shows/shows-country";
 
 export default function Shows() {
   return (
