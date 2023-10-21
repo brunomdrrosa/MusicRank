@@ -1,7 +1,7 @@
 import { ScrollView, StyleSheet, View } from "react-native";
 import ListImages from "../../components/ListImages";
 import MusicRankText from "../../components/MusicRankText";
-import { favoriteSongs } from "../../data/profile/favorite-songs";
+import { favoriteSongs } from "../../features/profile/data/favorite-songs";
 
 export default function Grammy() {
   return (
