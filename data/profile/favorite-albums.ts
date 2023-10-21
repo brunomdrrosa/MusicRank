@@ -1,4 +1,4 @@
-import { v4 as uuid } from "uuid";
+import { generateId } from "../../utils/generateId";
 
 export interface FavoriteAlbum {
   id: string;
@@ -7,15 +7,15 @@ export interface FavoriteAlbum {
 
 export const favoriteAlbums: FavoriteAlbum[] = [
   {
-    id: uuid(),
-    image: require("../images/profile/favoriteAlbums/trench.jpg"),
+    id: generateId(),
+    image: require("../../assets/images/profile/favoriteAlbums/trench.jpg"),
   },
   {
-    id: uuid(),
-    image: require("../images/profile/favoriteAlbums/wwafawdwg.jpg"),
+    id: generateId(),
+    image: require("../../assets/images/profile/favoriteAlbums/wwafawdwg.jpg"),
   },
   {
-    id: uuid(),
-    image: require("../images/profile/favoriteAlbums/blurryface.jpg"),
+    id: generateId(),
+    image: require("../../assets/images/profile/favoriteAlbums/blurryface.jpg"),
   },
 ];

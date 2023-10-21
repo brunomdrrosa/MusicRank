@@ -1,4 +1,4 @@
-import { v4 as uuid } from "uuid";
+import { generateId } from "../../utils/generateId";
 
 export interface LastAlbumReview {
   id: string;
@@ -7,15 +7,15 @@ export interface LastAlbumReview {
 
 export const lastAlbumsReviews: LastAlbumReview[] = [
   {
-    id: uuid(),
-    image: require("../images/profile/lastAlbumsReviews/guts.jpg"),
+    id: generateId(),
+    image: require("../../assets/images/profile/lastAlbumsReviews/guts.jpg"),
   },
   {
-    id: uuid(),
-    image: require("../images/profile/lastAlbumsReviews/happierThanEver.jpg"),
+    id: generateId(),
+    image: require("../../assets/images/profile/lastAlbumsReviews/happierThanEver.jpg"),
   },
   {
-    id: uuid(),
-    image: require("../images/profile/lastAlbumsReviews/scaledAndIcy.jpg"),
+    id: generateId(),
+    image: require("../../assets/images/profile/lastAlbumsReviews/scaledAndIcy.jpg"),
   },
 ];

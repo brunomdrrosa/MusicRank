@@ -1,4 +1,4 @@
-import { v4 as uuid } from "uuid";
+import { generateId } from "../../utils/generateId";
 
 export interface FriendReview {
   id: string;
@@ -9,21 +9,21 @@ export interface FriendReview {
 
 export const friendsReviews: FriendReview[] = [
   {
-    id: uuid(),
-    image: require("../images/shows/friendsReviews/lolla.jpg"),
-    friendPicture: require("../images/friends/digo.jpg"),
+    id: generateId(),
+    image: require("../../assets/images/shows/friendsReviews/lolla.jpg"),
+    friendPicture: require("../../assets/images/friends/digo.jpg"),
     review: 4,
   },
   {
-    id: uuid(),
-    image: require("../images/shows/friendsReviews/coldplay.jpg"),
-    friendPicture: require("../images/friends/rian.jpg"),
+    id: generateId(),
+    image: require("../../assets/images/shows/friendsReviews/coldplay.jpg"),
+    friendPicture: require("../../assets/images/friends/rian.jpg"),
     review: 5,
   },
   {
-    id: uuid(),
-    image: require("../images/shows/friendsReviews/kiss.jpg"),
-    friendPicture: require("../images/friends/vitor.jpg"),
+    id: generateId(),
+    image: require("../../assets/images/shows/friendsReviews/kiss.jpg"),
+    friendPicture: require("../../assets/images/friends/vitor.jpg"),
     review: 5,
   },
 ];

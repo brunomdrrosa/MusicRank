@@ -1,4 +1,4 @@
-import { v4 as uuid } from "uuid";
+import { generateId } from "../../utils/generateId";
 
 export interface ShowCity {
   id: string;
@@ -7,15 +7,15 @@ export interface ShowCity {
 
 export const showsCity: ShowCity[] = [
   {
-    id: uuid(),
-    image: require("../images/shows/showsPOA/rhcp.jpg"),
+    id: generateId(),
+    image: require("../../assets/images/shows/showsPOA/rhcp.jpg"),
   },
   {
-    id: uuid(),
-    image: require("../images/shows/showsPOA/nxZero.jpg"),
+    id: generateId(),
+    image: require("../../assets/images/shows/showsPOA/nxZero.jpg"),
   },
   {
-    id: uuid(),
-    image: require("../images/shows/showsPOA/capitalInicial.jpg"),
+    id: generateId(),
+    image: require("../../assets/images/shows/showsPOA/capitalInicial.jpg"),
   },
 ];

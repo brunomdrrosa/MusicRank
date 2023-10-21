@@ -1,4 +1,4 @@
-import { v4 as uuid } from "uuid";
+import { generateId } from "../../utils/generateId";
 
 export interface ShowCountry {
   id: string;
@@ -7,15 +7,15 @@ export interface ShowCountry {
 
 export const showsCountry: ShowCountry[] = [
   {
-    id: uuid(),
-    image: require("../images/shows/showsBrasil/taylorSwift.png"),
+    id: generateId(),
+    image: require("../../assets/images/shows/showsBrasil/taylorSwift.png"),
   },
   {
-    id: uuid(),
-    image: require("../images/shows/showsBrasil/evanescence.jpg"),
+    id: generateId(),
+    image: require("../../assets/images/shows/showsBrasil/evanescence.jpg"),
   },
   {
-    id: uuid(),
-    image: require("../images/shows/showsBrasil/paulMcCartney.jpg"),
+    id: generateId(),
+    image: require("../../assets/images/shows/showsBrasil/paulMcCartney.jpg"),
   },
 ];

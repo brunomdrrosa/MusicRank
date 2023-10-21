@@ -1,4 +1,4 @@
-import { v4 as uuid } from "uuid";
+import { generateId } from "../../utils/generateId";
 
 export interface Album {
   id: string;
@@ -7,43 +7,43 @@ export interface Album {
 
 export const albuns: Album[] = [
   {
-    id: uuid(),
+    id: generateId(),
     image: require("../../assets/images/discover/albums/drake.jpg"),
   },
   {
-    id: uuid(),
+    id: generateId(),
     image: require("../../assets/images/discover/albums/morganWallen.jpg"),
   },
   {
-    id: uuid(),
+    id: generateId(),
     image: require("../../assets/images/discover/albums/rodWave.jpg"),
   },
   {
-    id: uuid(),
+    id: generateId(),
     image: require("../../assets/images/discover/albums/olivia.jpg"),
   },
   {
-    id: uuid(),
+    id: generateId(),
     image: require("../../assets/images/discover/albums/zachBryan.jpg"),
   },
   {
-    id: uuid(),
+    id: generateId(),
     image: require("../../assets/images/discover/albums/sza.jpg"),
   },
   {
-    id: uuid(),
+    id: generateId(),
     image: require("../../assets/images/discover/albums/taylor.jpg"),
   },
   {
-    id: uuid(),
+    id: generateId(),
     image: require("../../assets/images/discover/albums/travisScott.jpg"),
   },
   {
-    id: uuid(),
+    id: generateId(),
     image: require("../../assets/images/discover/albums/noah.jpg"),
   },
   {
-    id: uuid(),
+    id: generateId(),
     image: require("../../assets/images/discover/albums/lover.jpg"),
   },
 ];

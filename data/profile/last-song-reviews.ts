@@ -1,4 +1,4 @@
-import { v4 as uuid } from "uuid";
+import { generateId } from "../../utils/generateId";
 
 export interface LastSongReview {
   id: string;
@@ -7,43 +7,43 @@ export interface LastSongReview {
 
 export const lastSongsReviews: LastSongReview[] = [
   {
-    id: uuid(),
-    image: require("../images/profile/lastSongsReviews/greedy.jpg"),
+    id: generateId(),
+    image: require("../../assets/images/profile/lastSongsReviews/greedy.jpg"),
   },
   {
-    id: uuid(),
-    image: require("../images/profile/lastSongsReviews/badIdeaRight.jpg"),
+    id: generateId(),
+    image: require("../../assets/images/profile/lastSongsReviews/badIdeaRight.jpg"),
   },
   {
-    id: uuid(),
-    image: require("../images/profile/lastSongsReviews/vampire.jpg"),
+    id: generateId(),
+    image: require("../../assets/images/profile/lastSongsReviews/vampire.jpg"),
   },
   {
-    id: uuid(),
-    image: require("../images/profile/lastSongsReviews/whatWasIMadeFor.jpg"),
+    id: generateId(),
+    image: require("../../assets/images/profile/lastSongsReviews/whatWasIMadeFor.jpg"),
   },
   {
-    id: uuid(),
-    image: require("../images/profile/lastSongsReviews/daylight.jpg"),
+    id: generateId(),
+    image: require("../../assets/images/profile/lastSongsReviews/daylight.jpg"),
   },
   {
-    id: uuid(),
-    image: require("../images/profile/lastSongsReviews/calmDown.jpg"),
+    id: generateId(),
+    image: require("../../assets/images/profile/lastSongsReviews/calmDown.jpg"),
   },
   {
-    id: uuid(),
-    image: require("../images/profile/lastSongsReviews/singleSoon.jpg"),
+    id: generateId(),
+    image: require("../../assets/images/profile/lastSongsReviews/singleSoon.jpg"),
   },
   {
-    id: uuid(),
-    image: require("../images/profile/lastSongsReviews/whereSheGoes.jpg"),
+    id: generateId(),
+    image: require("../../assets/images/profile/lastSongsReviews/whereSheGoes.jpg"),
   },
   {
-    id: uuid(),
-    image: require("../images/profile/lastSongsReviews/voceVaiLembrarDeMim.jpg"),
+    id: generateId(),
+    image: require("../../assets/images/profile/lastSongsReviews/voceVaiLembrarDeMim.jpg"),
   },
   {
-    id: uuid(),
-    image: require("../images/profile/lastSongsReviews/lost.jpg"),
+    id: generateId(),
+    image: require("../../assets/images/profile/lastSongsReviews/lost.jpg"),
   },
 ];

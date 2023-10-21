@@ -1,4 +1,4 @@
-import { v4 as uuid } from "uuid";
+import { generateId } from "../../utils/generateId";
 
 export interface FavoriteSong {
   id: string;
@@ -7,43 +7,43 @@ export interface FavoriteSong {
 
 export const favoriteSongs: FavoriteSong[] = [
   {
-    id: uuid(),
-    image: require("../images/profile/favoriteSongs/levelOfConcern.jpg"),
+    id: generateId(),
+    image: require("../../assets/images/profile/favoriteSongs/levelOfConcern.jpg"),
   },
   {
-    id: uuid(),
-    image: require("../images/profile/favoriteSongs/theFall.jpg"),
+    id: generateId(),
+    image: require("../../assets/images/profile/favoriteSongs/theFall.jpg"),
   },
   {
-    id: uuid(),
-    image: require("../images/profile/favoriteSongs/runaway.jpg"),
+    id: generateId(),
+    image: require("../../assets/images/profile/favoriteSongs/runaway.jpg"),
   },
   {
-    id: uuid(),
-    image: require("../images/profile/favoriteSongs/heatWaves.jpg"),
+    id: generateId(),
+    image: require("../../assets/images/profile/favoriteSongs/heatWaves.jpg"),
   },
   {
-    id: uuid(),
-    image: require("../images/profile/favoriteSongs/onlyForAMoment.jpg"),
+    id: generateId(),
+    image: require("../../assets/images/profile/favoriteSongs/onlyForAMoment.jpg"),
   },
   {
-    id: uuid(),
-    image: require("../images/profile/favoriteSongs/invisible.jpg"),
+    id: generateId(),
+    image: require("../../assets/images/profile/favoriteSongs/invisible.jpg"),
   },
   {
-    id: uuid(),
-    image: require("../images/profile/favoriteSongs/oceanEyes.jpg"),
+    id: generateId(),
+    image: require("../../assets/images/profile/favoriteSongs/oceanEyes.jpg"),
   },
   {
-    id: uuid(),
-    image: require("../images/profile/favoriteSongs/starboy.jpg"),
+    id: generateId(),
+    image: require("../../assets/images/profile/favoriteSongs/starboy.jpg"),
   },
   {
-    id: uuid(),
-    image: require("../images/profile/favoriteSongs/whenThePartyIsOver.jpg"),
+    id: generateId(),
+    image: require("../../assets/images/profile/favoriteSongs/whenThePartyIsOver.jpg"),
   },
   {
-    id: uuid(),
-    image: require("../images/profile/favoriteSongs/monster.jpg"),
+    id: generateId(),
+    image: require("../../assets/images/profile/favoriteSongs/monster.jpg"),
   },
 ];

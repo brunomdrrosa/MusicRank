@@ -1,4 +1,4 @@
-import { v4 as uuid } from "uuid";
+import { generateId } from "../../utils/generateId";
 
 export interface Musica {
   id: string;
@@ -7,43 +7,43 @@ export interface Musica {
 
 export const musicas: Musica[] = [
   {
-    id: uuid(),
+    id: generateId(),
     image: require("../../assets/images/discover/songs/greedy.jpg"),
   },
   {
-    id: uuid(),
+    id: generateId(),
     image: require("../../assets/images/discover/songs/red.jpg"),
   },
   {
-    id: uuid(),
+    id: generateId(),
     image: require("../../assets/images/discover/songs/cruelSummer.jpg"),
   },
   {
-    id: uuid(),
+    id: generateId(),
     image: require("../../assets/images/discover/songs/vampire.jpg"),
   },
   {
-    id: uuid(),
+    id: generateId(),
     image: require("../../assets/images/discover/songs/dualipa.jpg"),
   },
   {
-    id: uuid(),
+    id: generateId(),
     image: require("../../assets/images/discover/songs/badIdeaRight.jpg"),
   },
   {
-    id: uuid(),
+    id: generateId(),
     image: require("../../assets/images/discover/songs/wiwmf.jpg"),
   },
   {
-    id: uuid(),
+    id: generateId(),
     image: require("../../assets/images/discover/songs/daylight.jpg"),
   },
   {
-    id: uuid(),
+    id: generateId(),
     image: require("../../assets/images/discover/songs/singleSoon.jpg"),
   },
   {
-    id: uuid(),
+    id: generateId(),
     image: require("../../assets/images/discover/songs/calmDown.jpg"),
   },
 ];
