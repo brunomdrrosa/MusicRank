@@ -1,9 +1,13 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-const GrammyButton = () => {
+interface GrammyButtonProps {
+  onPress: () => void;
+}
+
+const GrammyButton: React.FC<GrammyButtonProps> = ({ onPress }) => {
   return (
     <>
-      <TouchableOpacity activeOpacity={0.6}>
+      <TouchableOpacity activeOpacity={0.6} onPress={onPress}>
         <Image
           source={require("../assets/images/discover/new.png")}
           style={styles.topLeftImage}

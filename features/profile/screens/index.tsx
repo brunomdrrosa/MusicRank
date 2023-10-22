@@ -26,11 +26,11 @@ export const ProfileTabScreen = (): ReactElement => {
           <View style={styles.numeros}>
             <View style={styles.numeroContainer}>
               <Text style={styles.numero}>83</Text>
-              <Text style={styles.textoAvaliacoes}>Músicas Avaliadas</Text>
+              <Text style={styles.textoAvaliacoes}>músicas avaliadas</Text>
             </View>
             <View style={styles.numeroContainer}>
               <Text style={styles.numero}>10</Text>
-              <Text style={styles.textoAvaliacoes}>Álbuns Avaliados</Text>
+              <Text style={styles.textoAvaliacoes}>álbuns avaliados</Text>
             </View>
           </View>
         </View>
