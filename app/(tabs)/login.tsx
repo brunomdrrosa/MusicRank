@@ -1,6 +1,9 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Login() {
+  const navigation = useNavigation();
+
   return (
     <View>
       <Image
@@ -13,12 +16,22 @@ export default function Login() {
         <Text style={styles.text}>
           Conecte-se com amantes da música e muito mais
         </Text>
-        <TouchableOpacity activeOpacity={0.6}>
+        <TouchableOpacity
+          activeOpacity={0.6}
+          onPress={() => {
+            navigation.navigate("index" as never);
+          }}
+        >
           <View style={styles.botao}>
             <Text style={styles.textoBotao}>Cadastrar-se</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity activeOpacity={0.6}>
+        <TouchableOpacity
+          activeOpacity={0.6}
+          onPress={() => {
+            navigation.navigate("index" as never);
+          }}
+        >
           <View style={styles.botao2}>
             <Image
               source={require("../../assets/images/spotify.png")}
@@ -27,7 +40,12 @@ export default function Login() {
             <Text style={styles.textoBotao2}>Entrar com Spotify</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity activeOpacity={0.6}>
+        <TouchableOpacity
+          activeOpacity={0.6}
+          onPress={() => {
+            navigation.navigate("index" as never);
+          }}
+        >
           <View style={styles.botao2}>
             <Image
               source={require("../../assets/images/appleMusic.png")}
@@ -36,7 +54,12 @@ export default function Login() {
             <Text style={styles.textoBotao2}>Entrar com Apple Music</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity activeOpacity={0.6}>
+        <TouchableOpacity
+          activeOpacity={0.6}
+          onPress={() => {
+            navigation.navigate("index" as never);
+          }}
+        >
           <Text style={styles.contaExistente}>
             Já possui uma conta? Faça login
           </Text>

@@ -20,6 +20,7 @@ export default function TabLayout() {
 
   return (
     <Tabs
+      initialRouteName="login"
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
         headerShown: false,
@@ -29,6 +30,13 @@ export default function TabLayout() {
         },
       }}
     >
+      <Tabs.Screen
+        name="login"
+        options={{
+          href: null,
+          tabBarStyle: { display: "none" },
+        }}
+      />
       <Tabs.Screen
         name="index"
         options={{
@@ -69,6 +77,12 @@ export default function TabLayout() {
           tabBarLabelStyle: {
             marginVertical: 4,
           },
+        }}
+      />
+      <Tabs.Screen
+        name="grammy"
+        options={{
+          href: null,
         }}
       />
     </Tabs>
