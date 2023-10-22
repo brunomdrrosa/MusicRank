@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     opacity: 0.4,
   },
   containerText: {
-    bottom: 180,
+    bottom: 110,
     justifyContent: "center",
     alignItems: "center",
   },

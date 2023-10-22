@@ -25,7 +25,7 @@ export default function Grammy() {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 20,
+    marginTop: 50,
     marginBottom: 20,
     marginLeft: 20,
   },
