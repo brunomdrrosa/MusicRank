@@ -31,14 +31,14 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen
-        name="login"
+        name="index"
         options={{
           href: null,
           tabBarStyle: { display: "none" },
         }}
       />
       <Tabs.Screen
-        name="index"
+        name="albums"
         options={{
           title: "Álbuns",
           tabBarIcon: ({ color }) => <TabBarIcon name="music" color={color} />,
