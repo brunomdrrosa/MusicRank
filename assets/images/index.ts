@@ -129,7 +129,7 @@ export const appImages = {
     },
   },
   screen: {
-    adaptiveIcon: require("./adaptive-icon.png"),
+    adaptiveIcon: require("./icon.png"),
     appleMusic: require("./appleMusic.png"),
     favicon: require("./favicon.png"),
     icon: require("./icon.png"),
