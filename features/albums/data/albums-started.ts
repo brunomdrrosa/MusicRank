@@ -22,7 +22,7 @@ const getImageByName = (name: NameType): string => {
 export const albumsStarted: AlbumStarted[] = [
   {
     id: generateId(),
-    albumName: "teste",
+    albumName: "Renaissance",
     image: getImageByName("beyonce"),
     progress: 0.9,
     album: [
@@ -33,7 +33,7 @@ export const albumsStarted: AlbumStarted[] = [
   },
   {
     id: generateId(),
-    albumName: "",
+    albumName: "Renaissance",
     image: getImageByName("harry"),
     progress: 0.8,
     album: [
@@ -44,7 +44,7 @@ export const albumsStarted: AlbumStarted[] = [
   },
   {
     id: generateId(),
-    albumName: "",
+    albumName: "Renaissance",
     image: getImageByName("adele"),
     progress: 0.5,
     album: [
@@ -55,7 +55,7 @@ export const albumsStarted: AlbumStarted[] = [
   },
   {
     id: generateId(),
-    albumName: "",
+    albumName: "Renaissance",
     image: getImageByName("lilnas"),
     progress: 0.9,
     album: [
@@ -66,7 +66,7 @@ export const albumsStarted: AlbumStarted[] = [
   },
   {
     id: generateId(),
-    albumName: "",
+    albumName: "Renaissance",
     image: getImageByName("taylor"),
     progress: 0.15,
     album: [
@@ -77,7 +77,7 @@ export const albumsStarted: AlbumStarted[] = [
   },
   {
     id: generateId(),
-    albumName: "",
+    albumName: "Renaissance",
     image: getImageByName("coldplay"),
     progress: 0.8,
     album: [
@@ -88,7 +88,7 @@ export const albumsStarted: AlbumStarted[] = [
   },
   {
     id: generateId(),
-    albumName: "",
+    albumName: "Renaissance",
     image: getImageByName("badbunny"),
     progress: 0.2,
     album: [
@@ -99,7 +99,7 @@ export const albumsStarted: AlbumStarted[] = [
   },
   {
     id: generateId(),
-    albumName: "",
+    albumName: "Renaissance",
     image: getImageByName("justin"),
     progress: 0.5,
     album: [

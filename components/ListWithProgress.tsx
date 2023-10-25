@@ -24,14 +24,13 @@ interface ListWithProgressProps {
   data: AlbumStarted[];
 }
 
-interface AlbumDetailsRouteParams {
-  albumName: string;
-  songs: { song: string; rating: number }[];
-}
-
 const ListWithProgress = ({ data }: ListWithProgressProps) => {
   const numColumns = 3;
   const navigation = useNavigation();
+
+  const handleImagePress = (albumName: string) => {
+    navigation.navigate("albumsDetails", { albumName: "TESTE" });
+  };
 
   const renderItem = ({
     item,
@@ -51,11 +50,7 @@ const ListWithProgress = ({ data }: ListWithProgressProps) => {
     <View style={styles.imageContainer}>
       <TouchableOpacity
         activeOpacity={0.6}
-        onPress={() => {
-          navigation.navigate("albumsDetails", {
-            albumName: "teste",
-          });
-        }}
+        onPress={() => handleImagePress("TESTE2")}
       >
         <Image source={item.image} style={styles.image} />
       </TouchableOpacity>

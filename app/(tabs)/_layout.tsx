@@ -87,7 +87,9 @@ export default function TabLayout() {
       />
       <Tabs.Screen
         name="albumsDetails"
+        initialParams={{ albumName: "TESTE" }}
         options={{
+          href: null,
         }}
       />
     </Tabs>

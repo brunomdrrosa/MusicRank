@@ -1,18 +1,17 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import { RouteProp } from "@react-navigation/native";
 
-type AlbumDetailsRouteParams = {
-  albumName: string;
-  songs: {
-    song: string;
-    rating: number;
-  }[];
-};
+const AlbumDetailsScreen: React.FC = ({ route }) => {
+  if (!route || !route.params) {
+    return (
+      <View>
+        <Text style={styles.text}>Nome do Álbum:</Text>
+        <Text style={styles.albumName}>Nome do Álbum Não Encontrado</Text>
+      </View>
+    );
+  }
 
-const AlbumDetailsScreen: React.FC<{
-  route: RouteProp<Record<string, AlbumDetailsRouteParams>, string>;
-}> = ({ route }) => {
   const { albumName } = route.params;
   console.log(route)
   console.log(route.params)
@@ -20,9 +19,22 @@ const AlbumDetailsScreen: React.FC<{
 
   return (
     <View>
-      <Text>Nome do Álbum: {albumName}</Text>
+      <Text style={styles.text}>Nome do Álbum:</Text>
+      <Text style={styles.albumName}>{albumName}</Text>
     </View>
   );
 };
 
 export default AlbumDetailsScreen;
+
+const styles = StyleSheet.create({
+  text: {
+    color: "white",
+    fontSize: 32,
+    top: 100,
+  },
+  albumName: {
+    color: "white",
+    fontSize: 24,
+  },
+});
