@@ -11,6 +11,7 @@ import { useNavigation } from "@react-navigation/native";
 interface AlbumStarted {
   id: string;
   albumName: string;
+  artist: string;
   image: string;
   progress: number;
   album: {
@@ -28,8 +29,17 @@ const ListWithProgress = ({ data }: ListWithProgressProps) => {
   const numColumns = 3;
   const navigation = useNavigation();
 
-  const handleImagePress = (albumName: string) => {
-    navigation.navigate("albumsDetails", { albumName: "TESTE" });
+  const handleImagePress = (item: AlbumStarted) => {
+    navigation.navigate("albumsDetails", {
+      data: {
+        id: item.id,
+        albumName: item.albumName,
+        artist: item.artist,
+        image: item.image,
+        progress: item.progress,
+        album: item.album,
+      },
+    });
   };
 
   const renderItem = ({
@@ -38,6 +48,7 @@ const ListWithProgress = ({ data }: ListWithProgressProps) => {
     item: {
       id: string;
       albumName: string;
+      artist: string;
       image: string;
       progress: number;
       album: {
@@ -50,7 +61,7 @@ const ListWithProgress = ({ data }: ListWithProgressProps) => {
     <View style={styles.imageContainer}>
       <TouchableOpacity
         activeOpacity={0.6}
-        onPress={() => handleImagePress("TESTE2")}
+        onPress={() => handleImagePress(item)}
       >
         <Image source={item.image} style={styles.image} />
       </TouchableOpacity>

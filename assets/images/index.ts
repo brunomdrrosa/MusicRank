@@ -13,7 +13,7 @@ export const appImages = {
       zachBryan: require("./discover/albums/zachBryan.jpg"),
     },
     reviews: {
-      billieEilish: require("./discover/reviews/billieEilish.jpg"),
+      muse: require("./discover/reviews/muse.jpg"),
       coldplay: require("./discover/reviews/coldplay.jpg"),
       europe: require("./discover/reviews/europe.jpg"),
       linkinPark: require("./discover/reviews/linkinPark.jpg"),

@@ -46,8 +46,8 @@ export const friendsReviews: FriendReview[] = [
   },
   {
     id: generateId(),
-    image: getImageByName("billieEilish"),
+    image: getImageByName("muse"),
     friendPicture: getFriendPictureByName("damage"),
-    review: 4,
+    review: 5,
   },
 ];
