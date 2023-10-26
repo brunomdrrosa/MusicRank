@@ -20,18 +20,20 @@ interface ListWithProgressProps {
 
 const ListImages = ({ data }: ListWithProgressProps) => {
   const navigation = useNavigation();
-  
+
   const handleImagePress = (item: AlbumStarted) => {
-    navigation.navigate("albumsDetails", {
-      data: {
-        id: item.id,
-        albumName: item.albumName,
-        artist: item.artist,
-        image: item.image,
-        progress: item.progress,
-        album: item.album,
-      },
-    });
+    if (item.albumName) {
+      navigation.navigate("albumsDetails", {
+        data: {
+          id: item.id,
+          albumName: item.albumName,
+          artist: item.artist,
+          image: item.image,
+          progress: item.progress,
+          album: item.album,
+        },
+      });
+    }
   };
 
   return (
@@ -40,8 +42,11 @@ const ListImages = ({ data }: ListWithProgressProps) => {
       horizontal
       keyExtractor={(item: { id: string }) => item.id.toString()}
       renderItem={({ item }) => (
-        <TouchableOpacity activeOpacity={0.6} onPress={() => handleImagePress(item)}>
-          <Image source={ item.image } style={styles.image} />
+        <TouchableOpacity
+          activeOpacity={0.6}
+          onPress={() => handleImagePress(item)}
+        >
+          <Image source={item.image} style={styles.image} />
         </TouchableOpacity>
       )}
     />
