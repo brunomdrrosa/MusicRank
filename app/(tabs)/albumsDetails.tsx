@@ -1,8 +1,12 @@
+import { useRoute } from "@react-navigation/native";
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
-import { RouteProp } from "@react-navigation/native";
+import { StyleSheet, Text, View } from "react-native";
 
-const AlbumDetailsScreen: React.FC = ({ route }) => {
+const AlbumDetailsScreen: React.FC = () => {
+  const route = useRoute();
+  const { albumName } = route.params;
+
+  console.log(albumName);
   if (!route || !route.params) {
     return (
       <View>
@@ -11,11 +15,6 @@ const AlbumDetailsScreen: React.FC = ({ route }) => {
       </View>
     );
   }
-
-  const { albumName } = route.params;
-  console.log(route)
-  console.log(route.params)
-  console.log(albumName)
 
   return (
     <View>
