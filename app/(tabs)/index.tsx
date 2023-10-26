@@ -35,7 +35,7 @@ export default function Login() {
           <View style={styles.botao2}>
             <Image
               source={require("../../assets/images/spotify.png")}
-              style={styles.icone}
+              style={styles.icone2}
             />
             <Text style={styles.textoBotao2}>Entrar com Spotify</Text>
           </View>
@@ -124,6 +124,12 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   icone: {
+    right: 25,
+    width: 22,
+    height: 22,
+  },
+  icone2: {
+    right: 50,
     width: 22,
     height: 22,
   },
