@@ -7,6 +7,7 @@ import {
   View,
   Text,
   ScrollView,
+  TouchableOpacity,
 } from "react-native";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 
@@ -37,60 +38,57 @@ const AlbumDetailsScreen: React.FC = () => {
         );
       }
     }
-    const starsStyle = song.length >= 20 ? styles.divStarsLong : styles.divStars;
-
-    return <View style={starsStyle}>{stars}</View>;
+    return <View style={styles.divStars}>{stars}</View>;
   };
 
   return (
     <ScrollView>
-      <View>
-        <View style={styles.imageContainer}>
-          <Image source={data.image} style={styles.image} />
-          <View style={styles.progressBar}>
-            <View
-              style={[
-                styles.progressGreen,
-                { width: `${data.progress * 100}%` },
-              ]}
-            />
-            <View
-              style={[
-                styles.progressGray,
-                { width: `${(1 - data.progress) * 100}%` },
-              ]}
-            />
-          </View>
-          <Text style={styles.text}>{data.albumName}</Text>
-          <Text style={styles.artist}>{data.artist}</Text>
-          {data.album.map((songInfo, index) => (
+      <View style={{ alignItems: "center" }}>
+        <Image source={data.image} style={styles.image} />
+        <View style={styles.progressBar}>
+          <View
+            style={[styles.progressGreen, { width: `${data.progress * 100}%` }]}
+          />
+          <View
+            style={[
+              styles.progressGray,
+              { width: `${(1 - data.progress) * 100}%` },
+            ]}
+          />
+        </View>
+        <Text style={styles.text}>{data.albumName}</Text>
+        <Text style={styles.artist}>{data.artist}</Text>
+        {data.album.map((songInfo, index) => (
+          <TouchableOpacity activeOpacity={0.6}>
             <View key={index} style={styles.divMusic}>
               <Image source={data.image} style={styles.imageMusic} />
               <View style={styles.divMusic2}>
-                <Text
-                  style={
-                    songInfo.song.length > 20
-                      ? styles.longSongName
-                      : styles.songName
-                  }
-                >
-                  {songInfo.song}
-                </Text>
-                <Text
-                  style={
-                    songInfo.song.length > 20
-                      ? styles.longArtistName
-                      : styles.artistName
-                  }
-                >
-                  {data.artist}
-                </Text>
+                <Text style={styles.songName}>{songInfo.song}</Text>
+                <Text style={styles.artistName}>{data.artist}</Text>
                 {renderStars(songInfo.rating, songInfo.song)}
+                {songInfo.listened ? (
+                  <View style={styles.bordaIcone}>
+                    <FontAwesome
+                      size={30}
+                      name="check"
+                      color="white"
+                      style={styles.icon}
+                    />
+                  </View>
+                ) : (
+                  <View style={styles.bordaIcone2}>
+                    <FontAwesome
+                      size={30}
+                      name="check"
+                      color="white"
+                      style={styles.icon}
+                    />
+                  </View>
+                )}
               </View>
             </View>
-          ))}
-          <View style={styles.finalDiv}></View>
-        </View>
+          </TouchableOpacity>
+        ))}
       </View>
     </ScrollView>
   );
@@ -102,20 +100,42 @@ const windowWidth = Dimensions.get("window").width;
 const imageWidth = windowWidth / 3 - 20;
 
 const styles = StyleSheet.create({
-  finalDiv: {
-    marginBottom: 100,
+  bordaIcone: {
+    width: 40,
+    height: 40,
+    backgroundColor: "#00ba00",
+    left: 180,
+    position: "relative",
+    zIndex: 1,
+    borderRadius: 50,
+  },
+  bordaIcone2: {
+    width: 40,
+    height: 40,
+    backgroundColor: "#888888",
+    left: 180,
+    position: "relative",
+    zIndex: 1,
+    borderRadius: 50,
+  },
+  icon: {
+    position: "absolute",
+    top: 5,
+    left: 5,
+    zIndex: 2,
   },
   divMusic: {
     flexDirection: "row",
     width: 380,
+    height: 117,
     backgroundColor: "#373737",
-    top: 80,
     borderRadius: 20,
     marginBottom: 20,
   },
   divMusic2: {
     flexDirection: "column",
-    bottom: 30,
+    justifyContent: "center",
+    bottom: 50,
     left: 20,
   },
   imageMusic: {
@@ -127,39 +147,28 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 26,
     fontWeight: "bold",
-    top: 60,
+    marginTop: 20,
+    textAlign: "center"
   },
   songName: {
     color: "white",
-    fontSize: 20,
+    fontSize: 16,
     fontWeight: "bold",
     top: 48,
-    maxWidth: 240,
-  },
-  longSongName: {
-    color: "white",
-    fontSize: 20,
-    fontWeight: "bold",
-    top: 40,
-    maxWidth: 240,
+    maxWidth: 170,
+    marginTop: 30,
   },
   artist: {
     color: "white",
     fontSize: 20,
     fontWeight: "bold",
-    top: 60,
+    marginBottom: 20,
   },
   artistName: {
     color: "white",
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: "bold",
     top: 45,
-  },
-  longArtistName: {
-    color: "white",
-    fontSize: 16,
-    fontWeight: "bold",
-    top: 40,
   },
   albumName: {
     color: "white",
@@ -168,9 +177,8 @@ const styles = StyleSheet.create({
   image: {
     width: imageWidth,
     height: imageWidth,
-    margin: 8,
     borderRadius: 10,
-    top: 50,
+    marginTop: 60,
   },
   progressBar: {
     width: 118,
@@ -191,15 +199,8 @@ const styles = StyleSheet.create({
     height: "100%",
     backgroundColor: "#888888",
   },
-  imageContainer: {
-    alignItems: "center",
-  },
   divStars: {
     flexDirection: "row",
     top: 55,
-  },
-  divStarsLong: {
-    flexDirection: "row",
-    top: 45,
   },
 });
