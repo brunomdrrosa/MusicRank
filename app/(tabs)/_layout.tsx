@@ -85,6 +85,18 @@ export default function TabLayout() {
           href: null,
         }}
       />
+      <Tabs.Screen
+        name="albumsDetails"
+        options={{
+          href: null,
+        }}
+      />
+      <Tabs.Screen
+        name="musicDetails"
+        options={{
+          href: null,
+        }}
+      />
     </Tabs>
   );
 }

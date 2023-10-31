@@ -6,21 +6,63 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-interface ListImagesProps {
-  data: { id: string; image: string; progress: number }[];
+interface AlbumStarted {
+  id: string;
+  albumName: string;
+  artist: string;
+  image: string;
+  progress: number;
+  album: {
+    song: string;
+    listened: boolean;
+    rating: number;
+  }[];
 }
 
-const ListWithProgress = ({ data }: ListImagesProps) => {
+interface ListWithProgressProps {
+  data: AlbumStarted[];
+}
+
+const ListWithProgress = ({ data }: ListWithProgressProps) => {
   const numColumns = 3;
+  const navigation = useNavigation();
+
+  const handleImagePress = (item: AlbumStarted) => {
+    navigation.navigate("albumsDetails", {
+      data: {
+        id: item.id,
+        albumName: item.albumName,
+        artist: item.artist,
+        image: item.image,
+        progress: item.progress,
+        album: item.album,
+      },
+    });
+  };
 
   const renderItem = ({
     item,
   }: {
-    item: { id: string; image: string; progress: number };
+    item: {
+      id: string;
+      albumName: string;
+      artist: string;
+      image: string;
+      progress: number;
+      album: {
+        song: string;
+        listened: boolean;
+        rating: number;
+      }[];
+    };
   }) => (
     <View style={styles.imageContainer}>
-      <TouchableOpacity activeOpacity={0.6}>
+      <TouchableOpacity
+        activeOpacity={0.6}
+        onPress={() => handleImagePress(item)}
+      >
         <Image source={item.image} style={styles.image} />
       </TouchableOpacity>
       <View style={styles.progressBar}>

@@ -1,18 +1,64 @@
 import { FlatList, Image, TouchableOpacity, StyleSheet } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-interface ListImagesProps {
-  data: { id: string; image: string }[];
+interface AlbumStarted {
+  id: string;
+  albumName: string;
+  artist: string;
+  image: string;
+  musica: string;
+  progress: number;
+  album: {
+    song: string;
+    listened: boolean;
+    rating: number;
+  }[];
 }
 
-const ListImages = ({ data }: ListImagesProps) => {
+interface ListWithProgressProps {
+  data: AlbumStarted[];
+}
+
+const ListImages = ({ data }: ListWithProgressProps) => {
+  const navigation = useNavigation();
+
+  const handleImagePress = (item: AlbumStarted) => {
+    if (item.albumName) {
+      navigation.navigate("albumsDetails", {
+        data: {
+          id: item.id,
+          albumName: item.albumName,
+          artist: item.artist,
+          image: item.image,
+          progress: item.progress,
+          album: item.album,
+        },
+      });
+    }
+    if (item.musica) {
+      navigation.navigate("musicDetails", {
+        data: {
+          id: item.id,
+          artist: item.artist,
+          image: item.image,
+          song: item.musica,
+          rating: item.rating,
+        },
+      });
+    }
+  };
+
   return (
     <FlatList
       data={data}
       horizontal
       keyExtractor={(item: { id: string }) => item.id.toString()}
       renderItem={({ item }) => (
-        <TouchableOpacity activeOpacity={0.6}>
-          <Image source={ item.image } style={styles.image} />
+        <TouchableOpacity
+          activeOpacity={0.6}
+          onPress={() => handleImagePress(item)}
+        >
+          <Image source={item.image} style={styles.image} />
         </TouchableOpacity>
       )}
     />

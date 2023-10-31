@@ -6,51 +6,35 @@ type NameType = keyof typeof appImages.profile.favoriteSongs;
 export interface FavoriteSong {
   id: string;
   image: string;
+  musica: string;
+  artist: string;
+  rating: number;
 }
 
 const getImageByName = (name: NameType): string => {
-  return appImages.profile.favoriteSongs[name];
+  return appImages.grammy.musica[name];
 };
 
 export const favoriteSongs: FavoriteSong[] = [
   {
     id: generateId(),
-    image: getImageByName("levelOfConcern"),
+    image: getImageByName("antiHero"),
+    musica: "Anti-Hero",
+    artist: "Taylor Swift",
+    rating: 5,
   },
   {
     id: generateId(),
-    image: getImageByName("theFall"),
+    image: getImageByName("killBill"),
+    musica: "Kill Bill",
+    artist: "SZA",
+    rating: 0,
   },
   {
     id: generateId(),
-    image: getImageByName("runaway"),
-  },
-  {
-    id: generateId(),
-    image: getImageByName("heatWaves"),
-  },
-  {
-    id: generateId(),
-    image: getImageByName("onlyForAMoment"),
-  },
-  {
-    id: generateId(),
-    image: getImageByName("invisible"),
-  },
-  {
-    id: generateId(),
-    image: getImageByName("oceanEyes"),
-  },
-  {
-    id: generateId(),
-    image: getImageByName("starboy"),
-  },
-  {
-    id: generateId(),
-    image: getImageByName("whenThePartyIsOver"),
-  },
-  {
-    id: generateId(),
-    image: getImageByName("monster"),
+    image: getImageByName("flowers"),
+    musica: "Flowers",
+    artist: "Miley Cyrus",
+    rating: 5,
   },
 ];
