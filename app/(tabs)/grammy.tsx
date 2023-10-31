@@ -2,6 +2,7 @@ import { ScrollView, StyleSheet, View } from "react-native";
 import ListImages from "../../components/ListImages";
 import MusicRankText from "../../components/MusicRankText";
 import { favoriteSongs } from "../../features/profile/data/favorite-songs";
+import { albumsOfTheYear } from "../../features/grammy/data/album-of-the-year";
 
 export default function Grammy() {
   return (
@@ -9,7 +10,7 @@ export default function Grammy() {
       <View style={styles.container}>
         <MusicRankText text="Confira as indicações do Grammy 2024" />
         <MusicRankText text="Álbum do Ano" />
-        <ListImages data={favoriteSongs} />
+        <ListImages data={albumsOfTheYear} />
         <MusicRankText text="Música do Ano" />
         <ListImages data={favoriteSongs} />
         <MusicRankText text="Gravação do Ano" />

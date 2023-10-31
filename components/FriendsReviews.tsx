@@ -1,17 +1,28 @@
-import {
-  FlatList,
-  Image,
-  TouchableOpacity,
-  StyleSheet,
-  View,
-} from "react-native";
+import { StyleSheet, View, FlatList, TouchableOpacity, Image } from "react-native";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { useNavigation } from "@react-navigation/native";
 
 interface FriendsReviews {
   data: { id: string; image: string; friendPicture: string; review: number }[];
 }
 
 const FriendsReviews = ({ data }: FriendsReviews) => {
+  const navigation = useNavigation();
+
+  const handleImagePress = (item: AlbumStarted) => {
+    if (item.musica) {
+      navigation.navigate("musicDetails", {
+        data: {
+          id: item.id,
+          artist: item.artist,
+          image: item.image,
+          song: item.musica,
+          rating: item.review,
+        },
+      });
+    }
+  };
+
   const renderStars = (review: number) => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
@@ -45,7 +56,10 @@ const FriendsReviews = ({ data }: FriendsReviews) => {
       keyExtractor={(item: { id: string }) => item.id.toString()}
       renderItem={({ item }) => (
         <View>
-          <TouchableOpacity activeOpacity={0.6}>
+          <TouchableOpacity
+            activeOpacity={0.6}
+            onPress={() => handleImagePress(item)}
+          >
             <Image source={item.image} style={styles.image} />
           </TouchableOpacity>
           <View style={styles.divReview}>

@@ -6,6 +6,7 @@ interface AlbumStarted {
   albumName: string;
   artist: string;
   image: string;
+  musica: string;
   progress: number;
   album: {
     song: string;
@@ -31,6 +32,17 @@ const ListImages = ({ data }: ListWithProgressProps) => {
           image: item.image,
           progress: item.progress,
           album: item.album,
+        },
+      });
+    }
+    if (item.musica) {
+      navigation.navigate("musicDetails", {
+        data: {
+          id: item.id,
+          artist: item.artist,
+          image: item.image,
+          song: item.musica,
+          rating: item.rating,
         },
       });
     }

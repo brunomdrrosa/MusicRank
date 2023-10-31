@@ -10,10 +10,25 @@ import {
   TouchableOpacity,
 } from "react-native";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { useNavigation } from "@react-navigation/native";
 
 const AlbumDetailsScreen: React.FC = () => {
   const route = useRoute();
   const { data } = route.params;
+
+  const navigation = useNavigation();
+
+  const handleImagePress = (item: AlbumStarted) => {
+    navigation.navigate("musicDetails", {
+      data: {
+        song: item.song,
+        listened: item.listened,
+        rating: item.rating,
+        artist: data.artist,
+        image: data.image,
+      },
+    });
+  };
 
   const renderStars = (review: number, song: string) => {
     const stars = [];
@@ -59,7 +74,10 @@ const AlbumDetailsScreen: React.FC = () => {
         <Text style={styles.text}>{data.albumName}</Text>
         <Text style={styles.artist}>{data.artist}</Text>
         {data.album.map((songInfo, index) => (
-          <TouchableOpacity activeOpacity={0.6}>
+          <TouchableOpacity
+            activeOpacity={0.6}
+            onPress={() => handleImagePress(songInfo)}
+          >
             <View key={index} style={styles.divMusic}>
               <Image source={data.image} style={styles.imageMusic} />
               <View style={styles.divMusic2}>
@@ -148,7 +166,7 @@ const styles = StyleSheet.create({
     fontSize: 26,
     fontWeight: "bold",
     marginTop: 20,
-    textAlign: "center"
+    textAlign: "center",
   },
   songName: {
     color: "white",
